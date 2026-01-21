@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Oliver Fussell | Rugby Highlights & Player Profile</title>
-    <meta name="description" content="Oliver Fussell rugby highlights, player profile, Centre/Fly Half, honours, strengths, and contact." />
+    <title>Riordan Sweet | Rugby Highlights & Player Profile</title>
+    <meta name="description" content="Riordan Sweet rugby highlights, player profile, Back Row (6/7/8), honours, strengths, and contact." />
 
     <style>
         :root {
@@ -14,10 +14,10 @@
             --text: #0f172a;
             --muted: #475569;
             --line: #dbe2ea;
-            /* England flag palette */
-            --accent: #c8102e; /* St George red */
+            /* NZ / USA vibe (no invento bandera con imagen; solo paleta) */
+            --accent: #0b3d91; /* deep blue */
+            --accent2: #c8102e; /* red */
         }
-
 
         * {
             box-sizing: border-box;
@@ -32,7 +32,7 @@
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             color: var(--text);
-            background: linear-gradient(rgba(245,247,250,.88), rgba(245,247,250,.95)), url("assets/OLIVER_BG.jpg") center/cover no-repeat fixed;
+            background: linear-gradient(rgba(245,247,250,.88), rgba(245,247,250,.95)), url("assets/RIO_BG.jpg") center/cover no-repeat fixed;
         }
 
         header {
@@ -145,9 +145,9 @@
         }
 
         .btnPrimary {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: #06233a;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            border-color: transparent;
+            color: #fff;
         }
 
         .card {
@@ -158,7 +158,7 @@
             margin-top: 20px;
         }
 
-        /* SECTIONS + SEPARADOR */
+        /* SECTIONS + SEPARATOR */
         .section {
             position: relative;
             margin: 54px 0;
@@ -166,11 +166,18 @@
         }
 
             .section::before {
-                background: rgba(200,16,46,.55);
-                border: 1px solid rgba(200,16,46,.45);
-                box-shadow: 0 14px 34px rgba(200,16,46,.25);
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: 18px;
+                transform: translateX(-50%);
+                width: min(1100px, calc(100% - 40px));
+                height: 10px;
+                border-radius: 999px;
+                background: linear-gradient(90deg, rgba(11,61,145,.55), rgba(200,16,46,.45));
+                border: 1px solid rgba(11,61,145,.22);
+                box-shadow: 0 14px 34px rgba(11,61,145,.18);
             }
-
 
             .section::after {
                 content: none;
@@ -203,7 +210,7 @@
 
         .facts {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
             gap: 14px;
             margin-top: 16px;
         }
@@ -232,57 +239,37 @@
 
         .profileLayout {
             display: grid;
-            grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+            grid-template-columns: minmax(0,420px) minmax(0,1fr);
             gap: 26px;
             align-items: start;
             margin-top: 14px;
-        }
-
-        /* FOTO HONOURS (más chica y encapsulada) */
-        .honoursPhoto {
-            width: 100%;
-            max-width: 320px; /* más chica que profile */
-            height: auto;
-            object-fit: cover;
-            border-radius: 16px;
-            border: 2px solid var(--line);
-            box-shadow: 0 12px 24px rgba(0,0,0,.10);
-            display: block;
-            margin: auto;
-        }
-
-        /* FOTO HONOURS (más chica y encapsulada) */
-        .honoursPhoto {
-            width: 100%;
-            max-width: 320px; /* más chica que profile */
-            height: auto;
-            object-fit: cover;
-            border-radius: 16px;
-            border: 2px solid var(--line);
-            box-shadow: 0 12px 24px rgba(0,0,0,.10);
-            display: block;
-            margin: auto;
-        }
-
-
-        @media (max-width:900px) {
-            .honoursPhoto {
-                justify-self: center;
-                max-width: 420px;
-            }
         }
 
         @media (max-width:900px) {
             .profileLayout {
                 grid-template-columns: 1fr;
             }
+        }
 
+        .profilePhoto {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 2px solid var(--line);
+            box-shadow: 0 15px 30px rgba(0,0,0,.12);
+            background: #fff;
+            display: block;
+        }
+
+        @media (max-width:900px) {
             .profilePhoto {
                 max-width: 420px;
                 margin: auto;
             }
         }
-        /* HONOURS: foto encapsulada dentro de "burbuja" y más chica */
+
+        /* Honours photo in the same "bubble" style as profile */
         .honoursPhotoCard {
             background: #fff;
             border: 1px solid var(--line);
@@ -295,7 +282,7 @@
 
         .honoursPhoto {
             width: 100%;
-            max-width: 320px; /* más chica */
+            max-width: 320px;
             height: auto;
             object-fit: cover;
             border-radius: 14px;
@@ -304,17 +291,9 @@
             display: block;
         }
 
-
-        @media (max-width:900px) {
-            .honoursPhoto {
-                max-width: 420px;
-                justify-self: center;
-            }
-        }
-
         .miniFacts {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0,1fr));
             gap: 10px;
             margin-top: 10px;
         }
@@ -342,7 +321,7 @@
 
         .kpiGrid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
             gap: 14px;
             margin-top: 14px;
         }
@@ -370,7 +349,7 @@
 
         .positionsGrid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0,1fr));
             gap: 14px;
             margin-top: 14px;
         }
@@ -405,11 +384,14 @@
             }
 
         .pill {
-            background: #fff5f6;
-            color: #7a0b1a;
-            border: 1px solid rgba(200,16,46,.25);
+            font-size: 12px;
+            font-weight: 900;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(11,61,145,.20);
+            background: linear-gradient(90deg, #eef4ff, #fff0f3);
+            color: #0f172a;
         }
-
 
         ul.clean {
             margin: 10px 0 0;
@@ -459,6 +441,7 @@
             font-size: 15px;
             overflow-wrap: anywhere;
             word-break: break-word;
+            line-height: 1.5;
         }
 
             .contactLine a {
@@ -483,7 +466,7 @@
 <body>
     <header>
         <div class="nav">
-            <h1>Oliver Fussell</h1>
+            <h1>Riordan Sweet</h1>
             <div class="navLinks">
                 <a href="#profile">Profile</a>
                 <a href="#strengths">Strengths</a>
@@ -500,11 +483,11 @@
         <div class="container">
             <div class="heroGrid">
                 <div>
-                    <h2>Oliver Fussell</h2>
+                    <h2>Riordan Sweet</h2>
                     <p>
-                        Skilled communicator and leader with experience in high-level competition. Demonstrates strong tactical awareness and adaptability,
-                        consistently organizing defensive lines and game plans to enhance overall team performance. With an ability to consistently break the gain line
-                        and create opportunities for the team.
+                        A fit, high-impact back-rower with a physical play style and elite conditioning.
+                        Utilizes a Varsity Wrestling background to dominate the contact area, excelling in the chest-to-chest battle in tackles and rucks.
+                        Versatile forward with international age-grade experience and a professional trial, capable of maintaining 80-minute intensity at a high level.
                     </p>
 
                     <div class="btnRow">
@@ -513,11 +496,11 @@
                     </div>
 
                     <div class="badgeRow">
-                        <span class="badge">Centre</span>
-                        <span class="badge">Fly Half</span>
+                        <span class="badge">Back Row (6/7/8)</span>
+                        <span class="badge">Collision Dominance</span>
+                        <span class="badge">Jackal Threat</span>
+                        <span class="badge">Elite Conditioning</span>
                         <span class="badge">Leadership</span>
-                        <span class="badge">Game Management</span>
-                        <span class="badge">Tactical Kicking</span>
                     </div>
                 </div>
 
@@ -528,14 +511,14 @@
                     </div>
 
                     <div class="miniFacts">
-                        <div class="miniFact"><b>Full Name</b><span>Oliver Fussell</span></div>
-                        <div class="miniFact"><b>Date of Birth</b><span>05/05/2004</span></div>
+                        <div class="miniFact"><b>Date of Birth</b><span>22/06/2004</span></div>
                         <div class="miniFact"><b>Age</b><span>21</span></div>
-                        <div class="miniFact"><b>Nationality</b><span>English</span></div>
+                        <div class="miniFact"><b>Nationality</b><span>American / New Zealand (NZ Passport Holder)</span></div>
                         <div class="miniFact"><b>College</b><span>Belmont Abbey College</span></div>
-                        <div class="miniFact"><b>Position</b><span>Centre / Fly Half</span></div>
-                        <div class="miniFact"><b>Height</b><span>183 cm (6 foot 1 inches)</span></div>
-                        <div class="miniFact"><b>Weight</b><span>220 lbs (99 kg)</span></div>
+                        <div class="miniFact"><b>Position</b><span>Back Row (6/7/8)</span></div>
+                        <div class="miniFact"><b>Height</b><span>188 cm / 6 foot 2 inches</span></div>
+                        <div class="miniFact"><b>Weight</b><span>98 kg / 215 lbs</span></div>
+                        <div class="miniFact"><b>Email</b><span><a href="mailto:riordanrugby8@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">riordanrugby8@gmail.com</a></span></div>
                     </div>
                 </div>
 
@@ -553,36 +536,35 @@
             </div>
 
             <div class="profileLayout">
-                <img class="profilePhoto" src="assets/OLIVERPROFILE.png" alt="Oliver Fussell profile photo">
+                <img class="profilePhoto" src="assets/RIO_PROFILE.png" alt="Riordan Sweet profile photo">
 
                 <div>
                     <div class="facts" style="margin-top:0;">
-                        <div class="fact"><b>Full Name</b><span>Oliver Fussell</span></div>
-                        <div class="fact"><b>Date of Birth</b><span>05/05/2004</span></div>
+                        <div class="fact"><b>Full Name</b><span>Riordan Sweet</span></div>
+                        <div class="fact"><b>Date of Birth</b><span>22/06/2004</span></div>
                         <div class="fact"><b>Age</b><span>21</span></div>
-                        <div class="fact"><b>Nationality</b><span>English</span></div>
+                        <div class="fact"><b>Nationality</b><span>American / New Zealand (NZ Passport Holder)</span></div>
                         <div class="fact"><b>College</b><span>Belmont Abbey College</span></div>
-                        <div class="fact"><b>Position</b><span>Centre / Fly Half</span></div>
-                        <div class="fact"><b>Height</b><span>183 cm / 6 foot 1 inches</span></div>
-                        <div class="fact"><b>Weight</b><span>220 lbs / 99 kg</span></div>
+                        <div class="fact"><b>Position</b><span>Blindside Flanker (6) / Openside (7) / Number 8</span></div>
+                        <div class="fact"><b>Height</b><span>188 cm / 6 foot 2 inches</span></div>
+                        <div class="fact"><b>Weight</b><span>98 kg / 215 lbs</span></div>
                     </div>
 
                     <div class="fact" style="margin-top:14px;">
                         <b>Contact</b>
                         <span>
-                            Email: <a href="mailto:oliverfussell4@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">oliverfussell4@gmail.com</a>
-
+                            Email: <a href="mailto:riordanrugby8@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">riordanrugby8@gmail.com</a>
                             <br>
-                            Phone: <a href="tel:+447803326921" style="color:var(--accent); font-weight:900; text-decoration:none;">+44 7803326921</a>
+                            Phone: <a href="tel:+12397762235" style="color:var(--accent); font-weight:900; text-decoration:none;">12397762235</a>
                         </span>
                     </div>
 
                     <div class="fact" style="margin-top:14px;">
                         <b>Player Summary</b>
                         <span>
-                            Skilled communicator and leader with experience in high-level competition. Demonstrates strong tactical awareness and adaptability,
-                            consistently organizing defensive lines and game plans to enhance overall team performance. With an ability to consistently break the gain line
-                            and create opportunities for the team.
+                            A fit back-rower with a 4:47 Bronco, an explosive 2.73 meter broad jump, and a high-impact, physical play style.
+                            Utilizing a Varsity Wrestling background to dominate the contact area, excels in winning the chest-to-chest battle in tackles and rucks.
+                            A versatile forward with international age-grade experience and a professional trial, capable of maintaining 80-minute intensity at a high level.
                         </span>
                     </div>
                 </div>
@@ -598,23 +580,39 @@
 
             <div class="kpiGrid">
                 <div class="kpi">
-                    <h4>⚡ Attack</h4>
-                    <p>Strong ball distribution off both hands. Excellent line running and timing. Ability to fix defenders and create space. Effective decision-making at the line. Confident first receiver under pressure. Solid offloading game in contact. Ability to break the gain line with strong carries at centre.</p>
+                    <h4>⚡ Attack & Ball Carrying</h4>
+                    <p>
+                        Collision dominance: specializes in hitting soft shoulders and using explosive leg drive to win post-contact meters.
+                        Link-man / ball-playing ability with strong spatial awareness, keeping the ball alive via tip-on passes and offloads in contact.
+                        Explosive off the base of the scrum.
+                    </p>
                 </div>
 
                 <div class="kpi">
-                    <h4>🎯 Kicking (Fly-Half Specific)</h4>
-                    <p>Tactical kicking from hand (touch, contestable, grubber). Effective territory management. Attacking kicks behind the line (chips, cross-field). Reliable goal-kicking (percentage: ___%).</p>
+                    <h4>🧱 Defence & Breakdown</h4>
+                    <p>
+                        Wrestling-based leverage for dominant chop and man-and-ball tackles.
+                        Jackal threat with rapid transition from tackler to contestant, staying low and strong to force turnovers.
+                        High work rate and clinical clearing to secure quick ball.
+                    </p>
                 </div>
 
                 <div class="kpi">
-                    <h4>🧠 Game Management</h4>
-                    <p>Controls tempo and structure. Reads defensive alignments quickly. Strong communication and leadership. Organizes attacking shape and backline moves. Adapts game plan based on match flow.</p>
+                    <h4>🧠 Game Management & Leadership</h4>
+                    <p>
+                        Tactical awareness to identify gaps in opposition and own defensive line.
+                        Vocal organizer of defensive lines, line speed off lineouts, and pod positioning under high pressure.
+                    </p>
                 </div>
 
                 <div class="kpi">
-                    <h4>🧱 Defence</h4>
-                    <p>Strong tackle technique (front-on & cover tackles). Good defensive reads at 10/12 channel. Organizes defensive line. Effective breakdown arrival when required.</p>
+                    <h4>🏋️ S&C Markers</h4>
+                    <p>
+                        Bronco: 4:47.
+                        Broad Jump: 2.73 meters.
+                        Bench Press: 161 kg / 355 lbs (1 rep).
+                        Maintains 80-minute intensity at a high level.
+                    </p>
                 </div>
             </div>
         </section>
@@ -629,34 +627,55 @@
             <div class="positionsGrid">
                 <div class="posCard">
                     <div class="posHeader">
-                        <h4>Fly Half</h4>
-                        <span class="pill">10</span>
+                        <h4>Blindside Flanker</h4>
+                        <span class="pill">6</span>
                     </div>
                     <ul class="clean">
-                        <li>Controls tempo and structure</li>
-                        <li>Reads defensive alignments quickly</li>
-                        <li>Organizes attacking shape and backline moves</li>
-                        <li>Tactical kicking: touch, contestable, grubber, chips, cross-field</li>
+                        <li>Collision dominance in carries and defence</li>
+                        <li>Lineout option: mobile jumper and powerful, technical lifter</li>
+                        <li>Clinical clearing and physical presence at the breakdown</li>
                     </ul>
                 </div>
 
                 <div class="posCard">
                     <div class="posHeader">
-                        <h4>Centre</h4>
-                        <span class="pill">12 • 13</span>
+                        <h4>Openside Flanker</h4>
+                        <span class="pill">7</span>
                     </div>
                     <ul class="clean">
-                        <li>Strong ball distribution off both hands</li>
-                        <li>Excellent line running and timing</li>
-                        <li>Fixes defenders and creates space</li>
-                        <li>Breaks the gain line with strong carries</li>
-                        <li>Organizes defensive line and reads at 10/12 channel</li>
+                        <li>Jackal threat: fast transition and strong body position over the ball</li>
+                        <li>High work rate: line speed, folding, and tackle volume</li>
+                        <li>Communication in the defensive fold and ruck area</li>
+                    </ul>
+                </div>
+
+                <div class="posCard">
+                    <div class="posHeader">
+                        <h4>Number 8</h4>
+                        <span class="pill">8</span>
+                    </div>
+                    <ul class="clean">
+                        <li>Explosive off the base of the scrum</li>
+                        <li>Ball-playing ability: tip-on passes and offloads in contact</li>
+                        <li>Leadership in pod positioning and defensive organization</li>
+                    </ul>
+                </div>
+
+                <div class="posCard">
+                    <div class="posHeader">
+                        <h4>Lineout / Set Piece Tools</h4>
+                        <span class="pill">Set Piece</span>
+                    </div>
+                    <ul class="clean">
+                        <li>Highly mobile jumping option</li>
+                        <li>Powerful, technical lifter</li>
+                        <li>Strong spatial awareness as a link man in phase play</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- HONOURS (TODO ADENTRO DE LA BURBUJA + FOTO A LA DERECHA) -->
+        <!-- HONOURS -->
         <section id="honours" class="section card">
             <div class="sectionTitle">
                 <h3>🏆 Honours</h3>
@@ -664,22 +683,18 @@
             </div>
 
             <div class="profileLayout">
-                <!-- INFO -->
                 <div class="facts" style="margin-top:0;">
-                    <div class="fact"><b>South West of England U18</b><span></span></div>
-                    <div class="fact"><b>South East Bears All Stars</b><span>2022 • 2023 • 2024</span></div>
-                    <div class="fact"><b>NCR All Star Team of the Tournament</b><span>x2</span></div>
-                    <div class="fact"><b>NCR All American</b><span></span></div>
-                    <div class="fact"><b>All American France Centennial Tour</b><span>2024</span></div>
+                    <div class="fact"><b>USA U18 National Team (Rugby)</b><span>Netherlands Tour Tournament • 2022 (International)</span></div>
+                    <div class="fact"><b>Salford Red Devils RLFC (UK)</b><span>Invited Trialist • 2023</span></div>
+                    <div class="fact"><b>Belmont Abbey College</b><span>First XV Starter • NCR Division I</span></div>
+                    <div class="fact"><b>USA Hawks Rugby League (Men’s)</b><span>2024 Squad Selection (Pulled out due to injury)</span></div>
                 </div>
 
-                <!-- FOTO DERECHA (ENCAPSULADA Y MÁS CHICA) -->
                 <div class="honoursPhotoCard">
-                    <img class="honoursPhoto" src="assets/OLIVER_HONOURS.png" alt="Oliver Fussell honours photo">
+                    <img class="honoursPhoto" src="assets/RIO_HONOURS.png" alt="Riordan Sweet honours photo">
                 </div>
             </div>
         </section>
-
 
         <!-- HIGHLIGHTS -->
         <section id="highlights" class="section">
@@ -689,18 +704,14 @@
             </div>
 
             <div class="videoWrap" style="padding:0; aspect-ratio:16/9;">
-                <iframe src="https://www.youtube.com/embed/6lSgfpm6TLs"
-                        title="Oliver Fussell Rugby Highlights"
+                <iframe src="https://www.youtube.com/embed/hkfsA3aABzo"
+                        title="Riordan Sweet Rugby Highlights"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
                         style="width:100%; height:100%; border:0;">
                 </iframe>
             </div>
-
-            <p class="hint" style="margin-top:10px;">
-                Replace <b>YOUTUBE_VIDEO_ID_HERE</b> with the real YouTube video ID (only the ID, not the full link).
-            </p>
         </section>
 
         <!-- REFERENCES -->
@@ -712,21 +723,12 @@
 
             <div class="facts" style="margin-top:0;">
                 <div class="fact">
-                    <b>Coach Genaro Fessia</b>
+                    <b>Liam Duffy</b>
                     <span>
-                        Head Coach at Belmont Abbey College (2022–present).<br>
-                        Puma #660 and former professional rugby player. Played for Sale Sharks, London Wasps, Barbarians RFC and competed in the Vodacom Cup.<br>
-                        World Rugby certified coach (Level 2).<br>
-                        Coached for 3 years at the Argentinian National Team High Performance Center (Central Region 2018-2021).<br><br>
-                        “First of all, Ollie is a great team member, a leader on and off the field with a great human spirit. As a player, he is a very versatile and adaptable athlete, agile and very powerful at the same time. Decisive in attack and with a very solid defense.”
-                    </span>
-                </div>
-
-                <div class="fact">
-                    <b>Reference Contact</b>
-                    <span>
-                        Phone: <a href="tel:+19808297847" style="color:var(--accent); font-weight:900; text-decoration:none;">+1 980 829 7847</a><br>
-                        Email: <a href="mailto:genarofessia@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">genarofessia@gmail.com</a>
+                        Head Coach of Sporting Olympique Avignon XIII in France.<br>
+                        Tackle U Co-Founder.<br>
+                        Formerly head coach of SWFL Copperheads RLFC where he coached Riordan.<br><br>
+                        “Riordan is a powerful athlete who has both the physical attributes and the skill set to cover multiple positions on the field of play. Not only this, but he is a consummate professional who is a pleasure to coach - always looking to learn and always looking for honest feedback to improve his game. His preparation is on point and he gives confidence to those around him.”
                     </span>
                 </div>
             </div>
@@ -741,19 +743,18 @@
 
             <div class="contactBox">
                 <p class="contactLine">
-                    Email: <a href="mailto:oliverfussell4@gmail.com">oliverfussell4@gmail.com</a>
-
-                    Phone: <a href="tel:+447803326921">+44 7803326921</a>
+                    Email: <a href="mailto:riordanrugby8@gmail.com">riordanrugby8@gmail.com</a><br>
+                    Phone: <a href="tel:+12397762235">12397762235</a>
                 </p>
-                <a class="btn btnPrimary" href="mailto:oliverfussell4@gmail.com?subject=Rugby%20Recruiting%20-%20Oliver%20Fussell">Email Now</a>
 
+                <a class="btn btnPrimary" href="mailto:riordanrugby8@gmail.com?subject=Rugby%20Recruiting%20-%20Riordan%20Sweet">Email Now</a>
             </div>
         </section>
 
     </main>
 
     <footer>
-        © 2026 Oliver Fussell • Rugby Highlights & Player Profile
+        © 2026 Riordan Sweet • Rugby Highlights & Player Profile
     </footer>
 </body>
 </html>
