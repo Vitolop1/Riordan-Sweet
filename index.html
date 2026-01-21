@@ -168,16 +168,16 @@
             .section::before {
                 content: "";
                 position: absolute;
-                left: 50%;
-                bottom: 18px;
-                transform: translateX(-50%);
-                width: min(1100px, calc(100% - 40px));
-                height: 10px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 6px;
+                background: linear-gradient( 90deg, #c8102e, #e33a4a, #c8102e );
                 border-radius: 999px;
-                background: linear-gradient(90deg, rgba(11,61,145,.55), rgba(200,16,46,.45));
-                border: 1px solid rgba(11,61,145,.22);
-                box-shadow: 0 14px 34px rgba(11,61,145,.18);
+                box-shadow: 0 10px 26px rgba(200,16,46,.35);
             }
+
+
 
             .section::after {
                 content: none;
@@ -253,14 +253,14 @@
 
         .profilePhoto {
             width: 100%;
-            height: auto;
+            height: 100%;
+            max-height: 520px;
             object-fit: cover;
             border-radius: 18px;
             border: 2px solid var(--line);
-            box-shadow: 0 15px 30px rgba(0,0,0,.12);
-            background: #fff;
-            display: block;
+            box-shadow: 0 18px 40px rgba(0,0,0,.15);
         }
+
 
         @media (max-width:900px) {
             .profilePhoto {
@@ -282,14 +282,35 @@
 
         .honoursPhoto {
             width: 100%;
-            max-width: 320px;
+            max-width: 460px; /* mucho más grande */
             height: auto;
             object-fit: cover;
-            border-radius: 14px;
+            border-radius: 16px;
             border: 2px solid var(--line);
-            box-shadow: 0 12px 24px rgba(0,0,0,.10);
-            display: block;
+            box-shadow: 0 16px 32px rgba(0,0,0,.15);
         }
+
+
+        /* HONOURS con fondo desvanecido */
+        .honoursSection {
+            position: relative;
+            overflow: hidden;
+        }
+
+            .honoursSection::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.96)), url("assets/RiordanHONOURS.png") center/cover no-repeat;
+                opacity: .35;
+                z-index: 0;
+            }
+
+            .honoursSection > * {
+                position: relative;
+                z-index: 1;
+            }
+
 
         .miniFacts {
             display: grid;
@@ -677,7 +698,8 @@
         </section>
 
         <!-- HONOURS -->
-        <section id="honours" class="section card">
+        <section id="honours" class="section card honoursSection">
+
             <div class="sectionTitle">
                 <h3>🏆 Honours</h3>
                 <p class="hint">Representative teams & awards</p>
