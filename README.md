@@ -1,13 +1,14 @@
-# Riordan Sweet Highlights
+# Riordan Sweet Rugby Profile
 
-Static website created to showcase rugby highlights and athletic performance.
+Professional one-page recruiting website for Riordan Sweet.
 
-## 🌐 Live Site
+## Live Site
 https://vitolop1.github.io/Riordan-Sweet/
 
-## 🛠 Technologies
+## Technologies
 - HTML
 - CSS
+- JavaScript
 
-## 🎯 Purpose
-This project was built to practice front-end development and present sports media in a clear and professional way.
+## Purpose
+Present Riordan's rugby profile, honours, highlights, references, and contact details in a clean format for coaches and recruiters.

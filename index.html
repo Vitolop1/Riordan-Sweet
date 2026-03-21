@@ -1,795 +1,334 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Riordan Sweet | Rugby Highlights & Player Profile</title>
-    <meta name="description" content="Riordan Sweet rugby highlights, player profile, Back Row (6/7/8), honours, strengths, and contact." />
-
-    <style>
-        :root {
-            --bg: #f2f4f8; /* fondo más suave */
-            --card: #ffffff;
-            --text: #0f172a;
-            --muted: #516073;
-            --line: #d7dee8;
-            --accent: #123a7a; /* blue */
-            --accent2: #c8102e; /* red */
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: var(--text);
-            background: linear-gradient(rgba(242,244,248,.90), rgba(242,244,248,.96)), url("assets/RIO_BG.jpg") center/cover no-repeat fixed;
-        }
-
-        header {
-            background: #fff;
-            border-bottom: 1px solid var(--line);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-            header::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 6px;
-                background: linear-gradient(90deg, #c8102e, #e63946, #c8102e);
-                box-shadow: 0 6px 16px rgba(200,16,46,.35);
-            }
-
-        .nav {
-            max-width: 1100px;
-            margin: auto;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-            .nav h1 {
-                margin: 0;
-                font-size: 18px;
-                font-weight: 900;
-                letter-spacing: .2px;
-            }
-
-        .navLinks {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-            .navLinks a {
-                text-decoration: none;
-                color: var(--accent);
-                font-weight: 800;
-                font-size: 14px;
-                padding: 6px 8px;
-                border-radius: 10px;
-            }
-
-                .navLinks a:hover {
-                    background: #f5fbff;
-                }
-
-        .hero {
-            padding: 70px 20px 50px;
-            border-bottom: 1px solid var(--line);
-            background: transparent;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .heroGrid {
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-            gap: 24px;
-        }
-
-        @media (max-width:900px) {
-            .heroGrid {
-                grid-template-columns: 1fr;
-            }
-
-            header {
-                position: static;
-            }
-        }
-
-        .hero h2 {
-            font-size: 42px;
-            margin: 0 0 10px;
-            font-weight: 1000;
-        }
-
-        .hero p {
-            font-size: 16px;
-            color: var(--muted);
-            max-width: 760px;
-            margin: 0 0 14px;
-            line-height: 1.6;
-        }
-
-        .btnRow {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 14px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 12px;
-            border-radius: 14px;
-            border: 1px solid var(--line);
-            background: #fff;
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .btnPrimary {
-            background: linear-gradient(90deg, var(--accent), var(--accent2));
-            border-color: transparent;
-            color: #fff;
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .section {
-            position: relative;
-            margin: 54px 0;
-            padding-bottom: 54px;
-        }
-
-            .section::before {
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 6px;
-                background: linear-gradient(90deg, #c8102e, #e33a4a, #c8102e);
-                border-radius: 999px;
-                box-shadow: 0 10px 26px rgba(200,16,46,.35);
-            }
-
-        main.container section.section:last-child::before {
-            display: none;
-        }
-
-        .sectionTitle {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 12px;
-        }
-
-            .sectionTitle h3 {
-                font-size: 24px;
-                margin: 0;
-                letter-spacing: .2px;
-            }
-
-        .hint {
-            font-size: 13px;
-            color: var(--muted);
-            margin: 0;
-        }
-
-        .facts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-            gap: 14px;
-            margin-top: 16px;
-        }
-
-        .fact {
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 12px;
-            background: #f9fbfd;
-            min-width: 0;
-        }
-
-            .fact b {
-                display: block;
-                margin-bottom: 6px;
-                font-size: 13px;
-            }
-
-            .fact span {
-                color: var(--muted);
-                font-size: 14px;
-                line-height: 1.45;
-                overflow-wrap: anywhere;
-                word-break: break-word;
-            }
-
-        .profileLayout {
-            display: grid;
-            grid-template-columns: minmax(0,420px) minmax(0,1fr);
-            gap: 26px;
-            align-items: start;
-            margin-top: 14px;
-        }
-
-        @media (max-width:900px) {
-            .profileLayout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .profilePhoto {
-            width: 100%;
-            height: 100%;
-            max-height: 520px;
-            object-fit: cover;
-            border-radius: 18px;
-            border: 2px solid var(--line);
-            box-shadow: 0 18px 40px rgba(0,0,0,.15);
-        }
-
-        @media (max-width:900px) {
-            .profilePhoto {
-                max-width: 420px;
-                margin: auto;
-            }
-        }
-
-        .honoursPhotoCard {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .honoursPhoto {
-            width: 100%;
-            max-width: 460px;
-            height: auto;
-            object-fit: cover;
-            border-radius: 16px;
-            border: 2px solid var(--line);
-            box-shadow: 0 16px 32px rgba(0,0,0,.15);
-        }
-
-        .honoursSection {
-            position: relative;
-            overflow: hidden;
-        }
-
-            .honoursSection::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.96)), url("assets/RiordanHONOURS.png") center/cover no-repeat;
-                opacity: .35;
-                z-index: 0;
-            }
-
-            .honoursSection > * {
-                position: relative;
-                z-index: 1;
-            }
-
-        .miniFacts {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0,1fr));
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .miniFact {
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 10px;
-            background: #f9fbfd;
-            min-width: 0;
-        }
-
-            .miniFact b {
-                display: block;
-                font-size: 12px;
-                margin-bottom: 6px;
-            }
-
-            .miniFact span {
-                color: var(--muted);
-                font-size: 13px;
-                overflow-wrap: anywhere;
-                word-break: break-word;
-            }
-
-        .kpiGrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-            gap: 14px;
-            margin-top: 14px;
-        }
-
-        .kpi {
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 14px;
-            background: #fff;
-            min-width: 0;
-        }
-
-            .kpi h4 {
-                margin: 0 0 8px;
-                font-size: 15px;
-                font-weight: 1000;
-            }
-
-            .kpi p {
-                margin: 0;
-                color: var(--muted);
-                font-size: 14px;
-                line-height: 1.5;
-            }
-
-        .positionsGrid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0,1fr));
-            gap: 14px;
-            margin-top: 14px;
-        }
-
-        @media (max-width:900px) {
-            .positionsGrid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .posCard {
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 14px;
-            background: #fff;
-            min-width: 0;
-        }
-
-        .posHeader {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 8px;
-        }
-
-            .posHeader h4 {
-                margin: 0;
-                font-size: 16px;
-                font-weight: 1000;
-            }
-
-        .pill {
-            font-size: 12px;
-            font-weight: 900;
-            padding: 6px 10px;
-            border-radius: 999px;
-            border: 1px solid rgba(11,61,145,.20);
-            background: linear-gradient(90deg, #eef4ff, #fff0f3);
-            color: #0f172a;
-        }
-
-        ul.clean {
-            margin: 10px 0 0;
-            padding-left: 18px;
-            color: var(--muted);
-        }
-
-            ul.clean li {
-                margin: 8px 0;
-            }
-
-        .badgeRow {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .badge {
-            font-size: 12px;
-            padding: 7px 10px;
-            border-radius: 999px;
-            border: 1px solid var(--line);
-            background: #ffffffcc;
-            color: var(--text);
-            font-weight: 900;
-        }
-
-        .videoWrap {
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            overflow: hidden;
-            background: #fff;
-        }
-
-        .contactBox {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .contactLine {
-            color: var(--muted);
-            margin: 0;
-            font-size: 15px;
-            overflow-wrap: anywhere;
-            word-break: break-word;
-            line-height: 1.5;
-        }
-
-            .contactLine a {
-                color: var(--accent);
-                font-weight: 1000;
-                text-decoration: none;
-            }
-
-        footer {
-            border-top: 1px solid var(--line);
-            padding: 20px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 14px;
-            margin-top: 50px;
-            background: #ffffffcc;
-            backdrop-filter: blur(2px);
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Riordan Sweet | Rugby Recruiting Profile</title>
+    <meta name="description" content="Riordan Sweet rugby recruiting profile. Back row forward (6/7/8) with USA U18 experience, Belmont Abbey background, strong contact work, and verified performance markers.">
+    <meta property="og:title" content="Riordan Sweet | Rugby Recruiting Profile">
+    <meta property="og:description" content="Back row forward with USA U18 experience, college rugby background, and strong contact, breakdown, and athletic markers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/RiordanPROFILE.png">
+    <meta name="theme-color" content="#0b1730">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Riordan Sweet",
+        "jobTitle": "Rugby Player",
+        "email": "mailto:riordanrugby8@gmail.com",
+        "telephone": "+1 239 776 2235",
+        "height": "188 cm",
+        "weight": "98 kg",
+        "alumniOf": "Belmont Abbey College",
+        "nationality": ["American", "New Zealand"],
+        "image": "assets/RiordanPROFILE.png"
+    }
+    </script>
 </head>
-
 <body>
-    <header>
-        <div class="nav">
-            <h1>Riordan Sweet</h1>
-            <div class="navLinks">
-                <a href="#profile">Profile</a>
-                <a href="#strengths">Strengths</a>
-                <a href="#positions">Positions</a>
-                <a href="#honours">Honours</a>
-                <a href="#highlights">Highlights</a>
-                <a href="#references">References</a>
-                <a href="#contact">Contact</a>
+    <div class="site-shell">
+        <header class="topbar">
+            <div class="topbar-inner">
+                <div class="brand">
+                    <h1 class="brand-name">Riordan Sweet</h1>
+                    <p class="brand-meta">Back Row | 6 / 7 / 8 | Belmont Abbey College</p>
+                </div>
+                <nav class="nav-links" aria-label="Primary">
+                    <a href="#profile">Profile</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#film">Film</a>
+                    <a href="#contact">Contact</a>
+                </nav>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="heroGrid">
-                <div>
-                    <h2>Riordan Sweet</h2>
-                    <p>
-                        A fit, high-impact back-rower with a physical play style and elite conditioning.
-                        Utilizes a Varsity Wrestling background to dominate the contact area, excelling in the chest-to-chest battle in tackles and rucks.
-                        Versatile forward with international age-grade experience and a professional trial, capable of maintaining 80-minute intensity at a high level.
+        <main>
+            <section class="hero section-shell">
+                <div class="hero-panel">
+                    <span class="eyebrow">USA U18 | NZ Passport Holder | Recruiting Profile</span>
+                    <h2 class="hero-title">Riordan Sweet</h2>
+                    <p class="hero-lead">
+                        High-output back row forward with international age-grade experience, a college rugby background, and a wrestling-based edge in contact. Built to bring physicality, tackle dominance, breakdown value, and repeat effort across 80 minutes.
                     </p>
 
-                    <div class="btnRow">
-                        <a class="btn btnPrimary" href="#highlights">Watch Highlights</a>
-                        <a class="btn" href="#contact">Contact</a>
+                    <div class="hero-meta">
+                        <span class="tag">Blindside Flanker</span>
+                        <span class="tag">Openside Flanker</span>
+                        <span class="tag">No. 8</span>
+                        <span class="tag">Belmont Abbey College</span>
                     </div>
 
-                    <div class="badgeRow">
-                        <span class="badge">Back Row (6/7/8)</span>
-                        <span class="badge">Collision Dominance</span>
-                        <span class="badge">Jackal Threat</span>
-                        <span class="badge">Elite Conditioning</span>
-                        <span class="badge">Leadership</span>
+                    <div class="action-row">
+                        <a class="button button-primary" href="#film">Watch Highlights</a>
+                        <a class="button button-ghost" href="mailto:riordanrugby8@gmail.com?subject=Rugby%20Recruiting%20-%20Riordan%20Sweet">Email Riordan</a>
+                        <button class="button button-ghost" type="button" id="copyEmail">Copy Email</button>
+                        <button class="button button-ghost" type="button" id="savePdf">Save as PDF</button>
+                    </div>
+
+                    <div class="hero-stats" aria-label="Key performance markers">
+                        <article class="hero-stat">
+                            <span class="hero-stat-label">Bronco</span>
+                            <span class="hero-stat-value">4:47</span>
+                        </article>
+                        <article class="hero-stat">
+                            <span class="hero-stat-label">Bench</span>
+                            <span class="hero-stat-value">161 KG</span>
+                        </article>
+                        <article class="hero-stat">
+                            <span class="hero-stat-label">Broad Jump</span>
+                            <span class="hero-stat-value">2.73 M</span>
+                        </article>
+                        <article class="hero-stat">
+                            <span class="hero-stat-label">Size</span>
+                            <span class="hero-stat-value">188 / 98</span>
+                        </article>
                     </div>
                 </div>
 
-                <div class="card" style="margin-top:0;">
-                    <div class="sectionTitle" style="margin-bottom:8px;">
-                        <h3 style="font-size:18px;">Quick Snapshot</h3>
-                        <p class="hint">Recruiting-ready</p>
+                <aside class="hero-visual" aria-label="Riordan Sweet profile image">
+                    <img src="assets/RiordanPROFILE.png" alt="Riordan Sweet in rugby kit">
+                    <div class="visual-caption">
+                        <article class="caption-card">
+                            <span class="caption-label">Profile</span>
+                            <p class="caption-text">American / New Zealand forward with USA U18 experience and a Belmont Abbey First XV background.</p>
+                        </article>
+                        <article class="caption-card">
+                            <span class="caption-label">On-field Value</span>
+                            <p class="caption-text">Collision work, breakdown pressure, lineout utility, and a high motor through the full match.</p>
+                        </article>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="profile" class="section-shell section-gap">
+                <div class="section-card">
+                    <div class="section-header">
+                        <div>
+                            <p class="section-kicker">Player Snapshot</p>
+                            <h2 class="section-title">Clear, Coach-Friendly Profile</h2>
+                        </div>
+                        <p class="section-hint">Everything a coach needs at a glance: identity, measurables, roles, athletic markers, and playing style.</p>
                     </div>
 
-                    <div class="miniFacts">
-                        <div class="miniFact"><b>Date of Birth</b><span>22/06/2004</span></div>
-                        <div class="miniFact"><b>Age</b><span>21</span></div>
-                        <div class="miniFact"><b>Nationality</b><span>American / New Zealand (NZ Passport Holder)</span></div>
-                        <div class="miniFact"><b>College</b><span>Belmont Abbey College</span></div>
-                        <div class="miniFact"><b>Position</b><span>Back Row (6/7/8)</span></div>
-                        <div class="miniFact"><b>Height</b><span>188 cm / 6 foot 2 inches</span></div>
-                        <div class="miniFact"><b>Weight</b><span>98 kg / 215 lbs</span></div>
-                        <div class="miniFact"><b>Email</b><span><a href="mailto:riordanrugby8@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">riordanrugby8@gmail.com</a></span></div>
+                    <div class="profile-grid">
+                        <div class="snapshot-grid">
+                            <article class="metric-card">
+                                <span class="metric-label">Date of Birth</span>
+                                <span class="metric-value">22 Jun 2004</span>
+                                <p class="metric-copy">21 years old</p>
+                            </article>
+                            <article class="metric-card">
+                                <span class="metric-label">Nationality</span>
+                                <span class="metric-value">USA / NZ</span>
+                                <p class="metric-copy">New Zealand passport holder</p>
+                            </article>
+                            <article class="metric-card">
+                                <span class="metric-label">Height / Weight</span>
+                                <span class="metric-value">188 CM / 98 KG</span>
+                                <p class="metric-copy">6 foot 2 inches / 215 lbs</p>
+                            </article>
+                            <article class="metric-card">
+                                <span class="metric-label">Primary Positions</span>
+                                <span class="metric-value">6 / 7 / 8</span>
+                                <p class="metric-copy">Back row roles with lineout value</p>
+                            </article>
+                            <article class="metric-card">
+                                <span class="metric-label">Current Program</span>
+                                <span class="metric-value">Belmont Abbey</span>
+                                <p class="metric-copy">First XV starter in NCR Division I</p>
+                            </article>
+                            <article class="metric-card">
+                                <span class="metric-label">Contact</span>
+                                <span class="metric-value">Available</span>
+                                <p class="metric-copy">riordanrugby8@gmail.com</p>
+                            </article>
+                        </div>
+
+                        <div class="profile-text">
+                            <article class="lede-card">
+                                <p>
+                                    Riordan brings a compact recruiting profile: size for the back row, proven conditioning, a strong contact identity, and experience across age-grade international rugby, college rugby, and professional trial environments.
+                                </p>
+                            </article>
+
+                            <div class="bullet-grid">
+                                <article class="bullet-card">
+                                    <h3>Playing Style</h3>
+                                    <ul>
+                                        <li>Physical carrier who wins post-contact meters.</li>
+                                        <li>Wrestling background supports body control and tackle leverage.</li>
+                                        <li>Useful link player with offload and tip-on options.</li>
+                                    </ul>
+                                </article>
+                                <article class="bullet-card">
+                                    <h3>Breakdown &amp; Defence</h3>
+                                    <ul>
+                                        <li>Fast from tackle to contest with strong jackal body shape.</li>
+                                        <li>High work rate folding around the corner and into repeated efforts.</li>
+                                        <li>Reliable collision work and cleanout presence.</li>
+                                    </ul>
+                                </article>
+                                <article class="bullet-card">
+                                    <h3>Athletic Markers</h3>
+                                    <ul>
+                                        <li>Bronco: 4:47</li>
+                                        <li>Broad jump: 2.73 meters</li>
+                                        <li>Bench press: 161 kg / 355 lbs</li>
+                                    </ul>
+                                </article>
+                                <article class="bullet-card">
+                                    <h3>Set Piece Value</h3>
+                                    <ul>
+                                        <li>Mobile lineout option as a jumper.</li>
+                                        <li>Technical, physical lifter.</li>
+                                        <li>Comfortable across blindside, openside, and No. 8 roles.</li>
+                                    </ul>
+                                </article>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-            </div>
-        </div>
-    </section>
-
-    <main class="container">
-
-        <!-- PLAYER PROFILE -->
-        <section id="profile" class="section card">
-            <div class="sectionTitle">
-                <h3>Player Profile</h3>
-                <p class="hint">Professional overview for coaches and recruiters</p>
-            </div>
-
-            <div class="profileLayout">
-                <img class="profilePhoto" src="assets/RiordanPROFILE.png" alt="Riordan Sweet profile photo">
-
-                <div>
-                    <div class="facts" style="margin-top:0;">
-                        <div class="fact"><b>Full Name</b><span>Riordan Sweet</span></div>
-                        <div class="fact"><b>Date of Birth</b><span>22/06/2004</span></div>
-                        <div class="fact"><b>Age</b><span>21</span></div>
-                        <div class="fact"><b>Nationality</b><span>American / New Zealand (NZ Passport Holder)</span></div>
-                        <div class="fact"><b>College</b><span>Belmont Abbey College</span></div>
-                        <div class="fact"><b>Position</b><span>Blindside Flanker (6) / Openside (7) / Number 8</span></div>
-                        <div class="fact"><b>Height</b><span>188 cm / 6 foot 2 inches</span></div>
-                        <div class="fact"><b>Weight</b><span>98 kg / 215 lbs</span></div>
+            <section id="experience" class="section-shell section-gap">
+                <div class="section-card">
+                    <div class="section-header">
+                        <div>
+                            <p class="section-kicker">Experience &amp; Honours</p>
+                            <h2 class="section-title">Representative Background</h2>
+                        </div>
+                        <p class="section-hint">A clean record of age-grade national selection, college rugby, and professional-level exposure.</p>
                     </div>
 
-                    <div class="fact" style="margin-top:14px;">
-                        <b>Contact</b>
-                        <span>
-                            Email: <a href="mailto:riordanrugby8@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">riordanrugby8@gmail.com</a>
-                            <br>
-                            Phone: <a href="tel:+12397762235" style="color:var(--accent); font-weight:900; text-decoration:none;">+1 239 776 2235</a>
-                        </span>
+                    <div class="split-layout">
+                        <div class="timeline-wrap">
+                            <article class="timeline-card">
+                                <span class="timeline-year">2024</span>
+                                <h3>USA Hawks Rugby League</h3>
+                                <p>Selected to the men's squad before withdrawing due to injury.</p>
+                            </article>
+                            <article class="timeline-card">
+                                <span class="timeline-year">2023</span>
+                                <h3>Salford Red Devils RLFC</h3>
+                                <p>Invited trialist in a professional rugby league environment in the UK.</p>
+                            </article>
+                            <article class="timeline-card">
+                                <span class="timeline-year">2022</span>
+                                <h3>USA U18 National Team</h3>
+                                <p>International representative on the Netherlands tour tournament.</p>
+                            </article>
+                            <article class="timeline-card">
+                                <span class="timeline-year">College Rugby</span>
+                                <h3>Belmont Abbey College</h3>
+                                <p>First XV starter competing in NCR Division I.</p>
+                            </article>
+                        </div>
+
+                        <aside class="honours-frame" aria-label="Riordan Sweet honours image">
+                            <img src="assets/RiordanHONOURS.png" alt="Riordan Sweet honours collage">
+                            <div class="honours-copy">
+                                <p>
+                                    Riordan's profile combines age-grade national selection, college production, and high-level trial exposure, giving coaches a player who has already operated in demanding environments.
+                                </p>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <section id="film" class="section-shell section-gap">
+                <div class="section-card">
+                    <div class="section-header">
+                        <div>
+                            <p class="section-kicker">Film &amp; References</p>
+                            <h2 class="section-title">See The Game, Then Call</h2>
+                        </div>
+                        <p class="section-hint">Video first, then short and relevant reference context from coaches who have worked directly with him.</p>
                     </div>
 
-                    <div class="fact" style="margin-top:14px;">
-                        <b>Player Summary</b>
-                        <span>
-                            A fit back-rower with a 4:47 Bronco, an explosive 2.73 meter broad jump, and a high-impact, physical play style.
-                            Utilizing a Varsity Wrestling background to dominate the contact area, excels in winning the chest-to-chest battle in tackles and rucks.
-                            A versatile forward with international age-grade experience and a professional trial, capable of maintaining 80-minute intensity at a high level.
-                        </span>
+                    <div class="film-grid">
+                        <article class="film-card">
+                            <h3>Highlights</h3>
+                            <div class="video-shell">
+                                <iframe src="https://www.youtube.com/embed/d-g2N3DgMGE"
+                                        title="Riordan Sweet Rugby Highlights"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                            </div>
+                            <p class="film-notes">
+                                The film shows Riordan's contact work, defensive pressure, breakdown presence, and carrying impact across back row roles.
+                            </p>
+                            <p class="print-only">Highlights video: https://www.youtube.com/watch?v=d-g2N3DgMGE</p>
+                        </article>
+
+                        <div class="reference-stack">
+                            <article class="reference-card">
+                                <h3>Reference 01</h3>
+                                <span class="reference-name">Genaro Fessia</span>
+                                <span class="reference-role">Head Coach, Belmont Abbey College | Former professional player | World Rugby Level 2 coach</span>
+                                <ul class="reference-meta">
+                                    <li>Phone: <a href="tel:+19808297847">+1 980 829 7847</a></li>
+                                    <li>Email: <a href="mailto:genarofessia@gmail.com">genarofessia@gmail.com</a></li>
+                                </ul>
+                                <p class="reference-quote">
+                                    Riordan is described as a hard-working, agile, versatile forward with strong physical presence, decisive attack moments, and dependable defence.
+                                </p>
+                            </article>
+                            <article class="reference-card">
+                                <h3>Reference 02</h3>
+                                <span class="reference-name">Liam Duffy</span>
+                                <span class="reference-role">Head Coach, Sporting Olympique Avignon XIII | Tackle U Co-Founder</span>
+                                <p class="reference-quote">
+                                    He is viewed as a powerful athlete with multi-position value, professional standards, strong preparation habits, and a coachable mindset.
+                                </p>
+                            </article>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- STRENGTHS -->
-        <section id="strengths" class="section">
-            <div class="sectionTitle">
-                <h3>✅ Strengths</h3>
-                <p class="hint">Coach-friendly overview (quick scan)</p>
-            </div>
-
-            <div class="kpiGrid">
-                <div class="kpi">
-                    <h4>⚡ Attack & Ball Carrying</h4>
-                    <p>
-                        Collision dominance: specializes in hitting soft shoulders and using explosive leg drive to win post-contact meters.
-                        Link-man / ball-playing ability with strong spatial awareness, keeping the ball alive via tip-on passes and offloads in contact.
-                        Explosive off the base of the scrum.
-                    </p>
-                </div>
-
-                <div class="kpi">
-                    <h4>🧱 Defence & Breakdown</h4>
-                    <p>
-                        Wrestling-based leverage for dominant chop and man-and-ball tackles.
-                        Jackal threat with rapid transition from tackler to contestant, staying low and strong to force turnovers.
-                        High work rate and clinical clearing to secure quick ball.
-                    </p>
-                </div>
-
-                <div class="kpi">
-                    <h4>🧠 Game Management & Leadership</h4>
-                    <p>
-                        Tactical awareness to identify gaps in opposition and own defensive line.
-                        Vocal organizer of defensive lines, line speed off lineouts, and pod positioning under high pressure.
-                    </p>
-                </div>
-
-                <div class="kpi">
-                    <h4>🏋️ S&C Markers</h4>
-                    <p>
-                        Bronco: 4:47.<br>
-                        Broad Jump: 2.73 meters.<br>
-                        Bench Press: 161 kg / 355 lbs (1 rep).<br>
-                        Maintains 80-minute intensity at a high level.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- POSITIONS -->
-        <section id="positions" class="section">
-            <div class="sectionTitle">
-                <h3>Positions</h3>
-                <p class="hint">Playable roles + responsibilities</p>
-            </div>
-
-            <div class="positionsGrid">
-                <div class="posCard">
-                    <div class="posHeader">
-                        <h4>Blindside Flanker</h4>
-                        <span class="pill">6</span>
+            <section id="contact" class="section-shell section-gap">
+                <div class="section-card">
+                    <div class="section-header">
+                        <div>
+                            <p class="section-kicker">Contact</p>
+                            <h2 class="section-title">Direct Recruiting Contact</h2>
+                        </div>
+                        <p class="section-hint">Simple and direct for coaches, clubs, and recruiting conversations.</p>
                     </div>
-                    <ul class="clean">
-                        <li>Collision dominance in carries and defence</li>
-                        <li>Lineout option: mobile jumper and powerful, technical lifter</li>
-                        <li>Clinical clearing and physical presence at the breakdown</li>
-                    </ul>
-                </div>
 
-                <div class="posCard">
-                    <div class="posHeader">
-                        <h4>Openside Flanker</h4>
-                        <span class="pill">7</span>
+                    <div class="contact-row">
+                        <article class="contact-card">
+                            <h3>Reach Out</h3>
+                            <ul class="contact-list">
+                                <li>Email: <a href="mailto:riordanrugby8@gmail.com">riordanrugby8@gmail.com</a></li>
+                                <li>Phone: <a href="tel:+12397762235">+1 239 776 2235</a></li>
+                                <li>College: Belmont Abbey College</li>
+                                <li>Positions: Blindside Flanker, Openside Flanker, No. 8</li>
+                            </ul>
+                        </article>
+                        <div class="contact-actions">
+                            <a class="button button-primary" href="mailto:riordanrugby8@gmail.com?subject=Rugby%20Recruiting%20-%20Riordan%20Sweet">Start Conversation</a>
+                            <button class="button button-ghost" type="button" id="copyEmailSecondary">Copy Email</button>
+                        </div>
                     </div>
-                    <ul class="clean">
-                        <li>Jackal threat: fast transition and strong body position over the ball</li>
-                        <li>High work rate: line speed, folding, and tackle volume</li>
-                        <li>Communication in the defensive fold and ruck area</li>
-                    </ul>
                 </div>
+            </section>
+        </main>
 
-                <div class="posCard">
-                    <div class="posHeader">
-                        <h4>Number 8</h4>
-                        <span class="pill">8</span>
-                    </div>
-                    <ul class="clean">
-                        <li>Explosive off the base of the scrum</li>
-                        <li>Ball-playing ability: tip-on passes and offloads in contact</li>
-                        <li>Leadership in pod positioning and defensive organization</li>
-                    </ul>
-                </div>
-
-                <div class="posCard">
-                    <div class="posHeader">
-                        <h4>Lineout / Set Piece Tools</h4>
-                        <span class="pill">Set Piece</span>
-                    </div>
-                    <ul class="clean">
-                        <li>Highly mobile jumping option</li>
-                        <li>Powerful, technical lifter</li>
-                        <li>Strong spatial awareness as a link man in phase play</li>
-                    </ul>
-                </div>
+        <footer class="footer">
+            <div class="footer-inner">
+                <p class="status-text">Riordan Sweet rugby recruiting profile built for clean coach scanning, direct contact, and better presentation on mobile and desktop.</p>
+                <p class="status-text">Copyright 2026 Riordan Sweet</p>
             </div>
-        </section>
+        </footer>
+    </div>
 
-        <!-- HONOURS -->
-        <section id="honours" class="section card honoursSection">
-            <div class="sectionTitle">
-                <h3>🏆 Honours</h3>
-                <p class="hint">Representative teams & awards</p>
-            </div>
-
-            <div class="profileLayout">
-                <div class="facts" style="margin-top:0;">
-                    <div class="fact"><b>USA U18 National Team (Rugby)</b><span>Netherlands Tour Tournament • 2022 (International)</span></div>
-                    <div class="fact"><b>Salford Red Devils RLFC (UK)</b><span>Invited Trialist • 2023</span></div>
-                    <div class="fact"><b>Belmont Abbey College</b><span>First XV Starter • NCR Division I</span></div>
-                    <div class="fact"><b>USA Hawks Rugby League (Men’s)</b><span>2024 Squad Selection (Pulled out due to injury)</span></div>
-                </div>
-
-                <div class="honoursPhotoCard">
-                    <img class="honoursPhoto" src="assets/RiordanHONOURS.png" alt="Riordan Sweet honours photo">
-                </div>
-            </div>
-        </section>
-
-        <!-- HIGHLIGHTS -->
-        <section id="highlights" class="section">
-            <div class="sectionTitle">
-                <h3>Highlights</h3>
-                <p class="hint">Game highlights hosted on YouTube</p>
-            </div>
-
-            <div class="videoWrap" style="padding:0; aspect-ratio:16/9;">
-                <iframe src="https://www.youtube.com/embed/d-g2N3DgMGE"
-                        title="Riordan Sweet Rugby Highlights"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
-                        style="width:100%; height:100%; border:0;">
-                </iframe>
-            </div>
-        </section>
-
-        <!-- REFERENCES -->
-        <section id="references" class="section card">
-            <div class="sectionTitle">
-                <h3>📎 References</h3>
-                <p class="hint">Coach references</p>
-            </div>
-
-            <div class="facts" style="margin-top:0;">
-                <div class="fact">
-                    <b>Coach Genaro Fessia</b>
-                    <span>
-                        Argentinian. Head Coach at Belmont Abbey College (2022–present) and Riordan's coach from 2022 to now.<br>
-                        Puma #660 and former professional rugby player. Played for Sale Sharks, London Wasps, Barbarians RFC and competed in the Vodacom Cup.<br>
-                        World Rugby certified coach (Level 2).<br>
-                        Coached for 3 years at the Argentinian National Team High Performance Center (Central Region 2018–2021).<br><br>
-                        “Rio is a very important member of the team; he likes to work hard and give his all on the field. He's a player who works intensely and diligently with and without the ball. Very agile and versatile, with excellent skills and a strong physical presence. He can play as a flanker, number 8, or even in the second row if needed. Decisive in attack and with a very solid defense.”
-                    </span>
-                </div>
-
-                <div class="fact">
-                    <b>Reference Contact (Coach Genaro Fessia)</b>
-                    <span>
-                        Phone: <a href="tel:+19808297847" style="color:var(--accent); font-weight:900; text-decoration:none;">+1 980 829 7847</a><br>
-                        Email: <a href="mailto:genarofessia@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">genarofessia@gmail.com</a>
-                    </span>
-                </div>
-
-                <div class="fact">
-                    <b>Liam Duffy</b>
-                    <span>
-                        Head Coach of Sporting Olympique Avignon XIII in France.<br>
-                        Tackle U Co-Founder.<br>
-                        Formerly head coach of SWFL Copperheads RLFC where he coached Riordan.<br><br>
-                        “Riordan is a powerful athlete who has both the physical attributes and the skill set to cover multiple positions on the field of play. Not only this, but he is a consummate professional who is a pleasure to coach - always looking to learn and always looking for honest feedback to improve his game. His preparation is on point and he gives confidence to those around him.”
-                    </span>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section card">
-            <div class="sectionTitle">
-                <h3>Contact</h3>
-                <p class="hint">For coaches, clubs, and recruiting</p>
-            </div>
-
-            <div class="contactBox">
-                <p class="contactLine">
-                    Email: <a href="mailto:riordanrugby8@gmail.com">riordanrugby8@gmail.com</a><br>
-                    Phone: <a href="tel:+12397762235">+1 239 776 2235</a>
-                </p>
-
-                <a class="btn btnPrimary" href="mailto:riordanrugby8@gmail.com?subject=Rugby%20Recruiting%20-%20Riordan%20Sweet">Email Now</a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        © 2026 Riordan Sweet • Rugby Highlights & Player Profile
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
