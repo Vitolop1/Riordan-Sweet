@@ -115,6 +115,45 @@ a {
     gap: 10px;
 }
 
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.lang-button {
+    min-width: 40px;
+    min-height: 36px;
+    padding: 7px 9px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: 160ms ease;
+}
+
+.lang-button:hover,
+.lang-button:focus-visible,
+.lang-button.is-active {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
 .nav-links a {
     padding: 8px 12px;
     border-radius: 999px;
@@ -647,6 +686,12 @@ a {
     font-size: 0.92rem;
 }
 
+.reference-copy {
+    margin: 12px 0 0;
+    color: #48556c;
+    line-height: 1.72;
+}
+
 .reference-quote {
     margin: 12px 0 0;
     color: #24324a;
@@ -728,6 +773,7 @@ a {
 
     .topbar-inner {
         padding: 12px 0;
+        flex-wrap: wrap;
     }
 
     .hero {
@@ -767,13 +813,37 @@ a {
         display: none;
     }
 
+    .topbar-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .action-row .button,
+    .contact-actions > * {
+        width: 100%;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-hint {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
     .hero-title {
         font-size: clamp(3.3rem, 18vw, 4.7rem);
     }
 
+    .visual-caption {
+        position: static;
+        padding: 16px;
+    }
+
     .hero-visual img,
     .honours-frame img {
-        min-height: 440px;
+        min-height: 360px;
     }
 }
 
